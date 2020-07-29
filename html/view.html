@@ -1,0 +1,50 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>글보기</title>
+    <link href="CSS/view.css" rel="stylesheet">
+</head>
+<body>
+    <fieldset>
+        <!--  게시글 출력  -->
+        <legend>글보기 글 번호<?php echo $record['board_id']; ?></legend>
+        <label>제목</label><p><?php echo $record['title']; ?></p>
+        <label>작성자</label><p><?php echo $record['user_name']; ?></p>
+        <label>작성시간</label>
+        <p><?php echo $record['reg_date']; ?></p>
+        <label>조회수</label><p><?php echo $record['hits']; ?></p>
+        <textarea id="content" name="content" readonly><?php echo $record['contents']; ?></textarea>
+        <!--  글 목록 이동  -->
+        <form action='list.php' method='post'>
+            <input type='submit' value='글 목록'>
+        </form>
+        <!--  글 수정 이동  -->
+        <form action='modify.php' method='post'>
+            <input type='submit' value='글 수정'>
+            <input type="hidden" value="<?php echo $record[board_id]; ?>" name="view_id">
+        </form>
+        <!--  글 삭제 이동  -->
+        <form action='delete.php' method='post'>
+            <input type='submit' value='글 삭제'>
+            <input type="hidden" value="<?php echo $record[board_id]; ?>" name="view_id">
+            <!-- 게시글 삭제 모드 전달 -->
+            <input type="hidden" value="deleteContent" name="deleteMode">
+        </form>
+    </fieldset>
+    <!-- 댓글 입력 창 -->
+    <fieldset id='commentBox'>
+        <form id='form' action='comment_process.php' method='post' autocomplete="off">
+            <label>댓글</label><textarea id='commentInput' name='comment'></textarea>
+            <label id='label'>작성자</label><input class='comm' type='text' name='writer'>
+            <label id='label2'>비밀번호</label><input class='comm' type='text' name='password'>
+            <input type="hidden" value="<?php echo $record[board_id]; ?>" name="view_id">
+            <input id='button' type='submit' value='댓글 저장'>
+        </form>
+        <?php
+        // 댓글이 하나라도 있으면 댓글 출력
+        if($count > 0)
+            prtComment($viewId);
+    ?>
+    </fieldset>
+</body>
+</html>

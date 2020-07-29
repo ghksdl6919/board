@@ -1,0 +1,39 @@
+table {
+    border: 1px solid gray;
+    border-collapse: collapse;
+}
+
+td,
+th {
+    border: 1px solid gray;
+    text-align: center;
+}
+
+.aTag {
+    color: black;
+    text-decoration: none;
+}
+
+.aTag:hover {
+    text-decoration: underline;
+}
+
+#list_box {
+    width: 900px;
+    height: 400px;
+    position: relative;
+    left: 50%;
+    margin-left: -450px;
+}
+
+#page_block {
+    display: inline;
+    position: absolute;
+    left: 50%;
+    margin-left: -90px;
+}
+
+#searchBox {
+    text-align: center;
+    margin: 10px 0px 10px 0px;
+}

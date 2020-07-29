@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>글 삭제</title>
+    <style>
+        fieldset {
+            width: 300px;
+        }
+        
+        #btn {
+            margin-top: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <fieldset>
+        <legend>글 삭제 : 글 번호
+            <?php echo $_POST['view_id']; ?>
+        </legend>
+        <!--  비밀번호 입력 후 delete_process.php로 전달  -->
+        <form action="delete_process.php" method="POST" autocomplete="off">
+            <label>비밀번호 </label>
+            <input type='text' name='password'>
+            <input type='hidden' value="<?php echo $_POST['view_id']; ?>" name='contentID'>
+            <!-- 게시글 or 댓글 삭제 모드 전송 -->
+            <input type="hidden" value="<?php echo $_POST['deleteMode']; ?>" name="mode">
+            <?php
+        // 댓글 삭제 모드일 경우 해당 게시글의 id 값도 전송
+        if($_POST['deleteMode'] == 'deleteComment') {
+            echo "<input type='hidden' name='argId' value='".$_POST['argId']."'>";
+        }
+        ?>
+                <input id="btn" type='submit' value='글 삭제'>
+        </form>
+    </fieldset>
+</body>
+
+</html>

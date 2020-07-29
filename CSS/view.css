@@ -1,0 +1,96 @@
+* {
+    margin-top: 10px;
+}
+
+@font-face {
+    font-family: 'S-CoreDream-2ExtraLight';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-2ExtraLight.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+p {
+    display: inline-block;
+    width: 400px;
+    font-family: 'S-CoreDream-2ExtraLight';
+}
+
+form {
+    display: inline-block;
+    width: 100px;
+    height: 30px;
+}
+
+fieldset {
+    width: 600px;
+    height: 600px;
+    position: relative;
+    left: 50%;
+    margin-left: -300px;
+}
+
+textarea {
+    width: 600px;
+    height: 300px;
+    font-size: 1.2em;
+}
+
+label {
+    display: inline-block;
+    width: 80px;
+    margin-right: 30px;
+    font-family: 'S-CoreDream-2ExtraLight';
+}
+
+input {
+    display: inline-block;
+    width: 100px;
+}
+
+#commentBox {
+    height: auto;
+}
+
+#commentInput {
+    height: 50px;
+}
+
+#label2 {
+    width: 70px;
+    margin-right: 0;
+}
+
+.comm {
+    width: 230px;
+    margin-top: 0;
+}
+
+#button {
+    float: right;
+}
+
+#form {
+    width: 100%;
+    height: auto;
+}
+
+#label {
+    width: 50px;
+    margin-right: 0;
+}
+
+.commentArea {
+    display: inline-block;
+    width: 100px;
+}
+
+#comment {
+    margin-left: 10px;
+    margin-top: 0;
+}
+
+#deleteBtn {
+    margin: 0 10px;
+    float: right;
+    width: auto;
+}

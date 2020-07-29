@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>글수정</title>
+    <link href="CSS/modify.css" rel="stylesheet">
+</head>
+
+<body>
+    <fieldset>
+        <form action="modify_process.php" method="POST" autocomplete="off">
+            <!-- 수정 페이지 출력 및 해당 칸에 게시글 내용 출력-->
+            <legend>글 수정 글 번호 :
+                <?php echo $record['board_id']; ?>
+            </legend>
+            <input type="hidden" value="<?php echo $record['board_id']; ?>" name="ID">
+            <label>제목</label><input id="title" type="text" name="title" value="<?php echo $record['title']; ?>"><br>
+            <label>작성자</label><input id="writer" type="text" name="writer" value="<?php echo $record['user_name']; ?>"><br>
+            <label>비밀번호</label><input id="password" type="text" name="password"><br>
+            <textarea id="content" name="content"><?php echo $record['contents']; ?></textarea>
+            <input class="submitBtn" type="submit" value="수정하기" style="position: absolute; bottom: 10px;">
+        </form>
+        <!-- 글 목록 클릭 시 list.php로 이동 -->
+        <form id="position" action="list.php" method="post">
+            <input class="submitBtn" type="submit" value="글 목록">
+        </form>
+    </fieldset>
+</body>
+
+</html>
